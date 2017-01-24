@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "yiisoft/yii2": "*",
+        "yiisoft/yii2": "^2.0.0",
         "hector-del-rio/yii2-zerone": "^1.0.0"
     },
     "autoload": {
