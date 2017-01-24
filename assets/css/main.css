@@ -1,0 +1,19 @@
+.image-container .btn-image {
+    margin: 10px auto auto;
+}
+
+.image-container .btn-select-image {
+    display: none;
+}
+
+.image-container .btn-remove-image {
+    display: block;
+}
+
+.image-container.empty .btn-select-image {
+    display: block;
+}
+
+.image-container.empty .btn-remove-image {
+    display: none;
+}

@@ -1,0 +1,31 @@
+{
+    "name": "hector-del-rio/yii2-zerone-up",
+    "description": "Responsive image upload widget for Yii2.",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2",
+        "image",
+        "photo",
+        "picture",
+        "upload",
+        "preview",
+        "model",
+        "behavior"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hector del Rio",
+            "email": "public.hector.del.rio@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "hector-del-rio/yii2-zerone": "^1.0.0",
+    },
+    "autoload": {
+        "psr-4": {
+            "hectordelrio\\zeroneUp\\": ""
+        }
+    }
+}
