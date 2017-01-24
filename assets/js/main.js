@@ -3,7 +3,8 @@
 
     $.fn.zeroneSelect = function () {
         var container = $(this).closest('.zerone-up-widget-container');
-        var preview = container.find('.image-preview');
+        var imageContainer = container.find('.zerone-image-container');
+        var preview = imageContainer.find('.zerone-image-preview');
         var inputRemoved = container.find('.zerone-up-image-removed-input');
 
         if (this.files && this.files[0]) {
@@ -14,6 +15,7 @@
 
                 preview.css('background-image', 'url(' + result + ')');
                 container.removeClass('empty');
+                imageContainer.removeClass('empty');
 
             };
 
@@ -24,12 +26,14 @@
 
     $.fn.zeroneRemove = function () {
         var container = $(this).closest('.zerone-up-widget-container');
-        var input = container.children('input[type=file]');
-        var preview = container.find('.image-preview');
+        var imageContainer = container.find('.zerone-image-container');
+        var preview = imageContainer.find('.zerone-image-preview');
         var inputRemoved = container.find('.zerone-up-image-removed-input');
+        var input = container.children('input[type=file]');
 
         inputRemoved.val('1');
         container.addClass('empty');
+        imageContainer.addClass('empty');
         preview.css('background-image', '');
         preview.removeAttr('data-url');
 

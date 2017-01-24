@@ -1,5 +1,5 @@
-.zerone-up-widget-container > .zerone-widget-container {
-    margin: 5px;
+.zerone-up-widget-container > .btn {
+    margin-top: 8px;
 }
 
 .zerone-up-widget-container > input[type="file"] {
