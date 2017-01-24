@@ -1,3 +1,8 @@
+.zerone-up-widget-container > .zerone-image-container  {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .zerone-up-widget-container > .btn {
     margin-top: 8px;
 }
