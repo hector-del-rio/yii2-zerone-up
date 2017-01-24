@@ -5,53 +5,56 @@
  * Date: 20/01/17
  * Time: 15:07
  *
+ * @var string $id
  * @var \yii\base\Model $model
  * @var \yii\web\View $this
- * @var string $input
- * @var array $imageWidgetOptions
+ * @var string $fileInput
+ * @var string $removeInput
+ * @var string $imageWidget
  */
 
 \hectordelrio\zeroneUp\assets\AssetBundle::register($this);
 
-echo '<div class="zerone-widget-container">';
+?>
 
-echo \hectordelrio\zerone\ZeroneWidget::widget($imageWidgetOptions);
+<div id="<?= $id ?>" class="zerone-widget-container">
 
-// button select image
-echo '<div class="btn btn-success">';
-echo Yii::t('app', 'Select an image...');
+    <?= $imageWidget ?>
 
-echo $input;
+    <div class="btn btn-success select-image-btn"><?= Yii::t('app', 'Select an image...') ?></div>
 
-//echo $form
-//    ->field(
-//        $langModel,
-//        "[$languageCode]fileUpload",
-//        [
-//            'template' => '{input}',
-//            'options' => ['tag' => false]
-//        ]
-//    )
-//    ->fileInput(['class' => 'image-input']);
+    <div class="btn btn-danger remove-image-btn"><?= Yii::t('app', 'Remove image') ?></div>
 
-echo '</div>';
+    <?= $fileInput ?>
 
-// button remove image
-echo '<div class="btn btn-danger">';
-echo Yii::t('app', 'Remove image');
+    <?= $removeInput ?>
 
-//echo $form
-//    ->field(
-//        $langModel,
-//        "[$languageCode]fileRemoved",
-//        [
-//            'template' => '{input}',
-//            'options' => ['tag' => false]
-//        ]
-//    )
-//    ->hiddenInput([
-//        'class' => 'image-removed-input',
-//        'value' => '0',
-//    ]);
-echo '</div>';
-echo '</div>';
+    <?
+
+    //echo $form
+    //    ->field(
+    //        $langModel,
+    //        "[$languageCode]fileUpload",
+    //        [
+    //            'template' => '{input}',
+    //            'options' => ['tag' => false]
+    //        ]
+    //    )
+    //    ->fileInput(['class' => 'image-input']);
+
+    //echo $form
+    //    ->field(
+    //        $langModel,
+    //        "[$languageCode]fileRemoved",
+    //        [
+    //            'template' => '{input}',
+    //            'options' => ['tag' => false]
+    //        ]
+    //    )
+    //    ->hiddenInput([
+    //        'class' => 'image-removed-input',
+    //        'value' => '0',
+    //    ]);
+    ?>
+
+</div>

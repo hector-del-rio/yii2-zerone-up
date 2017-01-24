@@ -1,8 +1,8 @@
 (function ($) {
     'use strict';
 
-    $(document).on('change', '.image-input', function () {
-        var container = $(this).closest('.image-container');
+    $.fn.zeroneSelect = function () {
+        var container = $(this).closest('.zerone-widget-container');
         var preview = container.find('.image-preview');
         var inputRemoved = container.find('.image-removed-input');
 
@@ -13,7 +13,6 @@
                 var result = e.target.result;
 
                 preview.css('background-image', 'url(' + result + ')');
-                preview.attr('data-url', result);
                 container.removeClass('empty');
 
             };
@@ -21,11 +20,11 @@
             reader.readAsDataURL(this.files[0]);
             inputRemoved.val('0');
         }
-    });
+    };
 
-    $(document).on('click', '.btn-remove-image', function () {
-        var container = $(this).closest('.image-container');
-        var input = container.find('input[type=file]');
+    $.fn.zeroneRemove = function () {
+        var container = $(this).closest('.zerone-widget-container');
+        var input = container.children('input[type=file]');
         var preview = container.find('.image-preview');
         var inputRemoved = container.find('.image-removed-input');
 
@@ -36,6 +35,6 @@
 
         // clear file input
         input.replaceWith(input.clone());
-    });
+    };
 
 })(window.jQuery);

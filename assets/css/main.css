@@ -1,19 +1,19 @@
-.image-container .btn-image {
+.zerone-widget-container .btn-image {
     margin: 10px auto auto;
 }
 
-.image-container .btn-select-image {
+.zerone-widget-container .select-image-btn {
     display: none;
 }
 
-.image-container .btn-remove-image {
+.zerone-widget-container .remove-image-btn {
     display: block;
 }
 
-.image-container.empty .btn-select-image {
+.zerone-widget-container.empty .select-image-btn {
     display: block;
 }
 
-.image-container.empty .btn-remove-image {
+.zerone-widget-container.empty .remove-image-btn {
     display: none;
 }
