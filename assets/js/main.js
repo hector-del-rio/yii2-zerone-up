@@ -2,9 +2,9 @@
     'use strict';
 
     $.fn.zeroneSelect = function () {
-        var container = $(this).closest('.zerone-widget-container');
+        var container = $(this).closest('.zerone-up-widget-container');
         var preview = container.find('.image-preview');
-        var inputRemoved = container.find('.image-removed-input');
+        var inputRemoved = container.find('.zerone-up-image-removed-input');
 
         if (this.files && this.files[0]) {
             var reader = new FileReader();
@@ -23,10 +23,10 @@
     };
 
     $.fn.zeroneRemove = function () {
-        var container = $(this).closest('.zerone-widget-container');
+        var container = $(this).closest('.zerone-up-widget-container');
         var input = container.children('input[type=file]');
         var preview = container.find('.image-preview');
-        var inputRemoved = container.find('.image-removed-input');
+        var inputRemoved = container.find('.zerone-up-image-removed-input');
 
         inputRemoved.val('1');
         container.addClass('empty');

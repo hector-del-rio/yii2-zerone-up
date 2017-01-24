@@ -1,19 +1,23 @@
-.zerone-widget-container .btn-image {
-    margin: 10px auto auto;
+.zerone-up-widget-container > .zerone-widget-container {
+    margin: 5px;
 }
 
-.zerone-widget-container .select-image-btn {
+.zerone-up-widget-container > input[type="file"] {
     display: none;
 }
 
-.zerone-widget-container .remove-image-btn {
+.zerone-up-widget-container > .zerone-up-select-image-btn {
+    display: none;
+}
+
+.zerone-up-widget-container > .zerone-up-remove-image-btn {
     display: block;
 }
 
-.zerone-widget-container.empty .select-image-btn {
+.zerone-up-widget-container.empty > .zerone-up-select-image-btn {
     display: block;
 }
 
-.zerone-widget-container.empty .remove-image-btn {
+.zerone-up-widget-container.empty > .zerone-up-remove-image-btn {
     display: none;
 }
