@@ -28,6 +28,9 @@ class ZeroneUpWidget extends InputWidget
     public $size = null;
     public $zoom = null;
 
+    private $_width = null;
+    private $_widthUnit = null;
+
     public function init()
     {
 
@@ -41,6 +44,15 @@ class ZeroneUpWidget extends InputWidget
 
             $this->options['id'] = $this->hasModel() ? Html::getInputId($this->model,
                 $this->attribute) : $this->getId();
+
+        }
+
+        $this->_width = (float)filter_var($this->size, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $this->_widthUnit = substr($this->size, strlen($this->_width));
+
+        if (empty($this->_widthUnit)) {
+
+            $this->_widthUnit = 'px';
 
         }
 
@@ -72,6 +84,16 @@ class ZeroneUpWidget extends InputWidget
             'size' => $this->size,
             'zoom' => $this->zoom,
         ]);
+
+        $width = $this->_width . $this->_widthUnit;
+
+        \Yii::$app->view->registerCss(<<<CSS
+#$id {
+    width: $width;
+}
+CSS
+        );
+
 
         \Yii::$app->view->registerJs(<<<JS
 (function ($) {
