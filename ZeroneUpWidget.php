@@ -38,7 +38,6 @@ class ZeroneUpWidget extends InputWidget
     public $ratio = null;
     public $url = null;
     public $size = null;
-    public $zoom = null;
 
     private $_width = null;
     private $_widthUnit = null;
@@ -123,7 +122,6 @@ JS
             'ratio' => $this->ratio,
             'url' => $this->url,
             'size' => $this->size,
-            'zoom' => $this->zoom,
         ]);
 
         $ret .= Html::label(
