@@ -19,10 +19,19 @@
     display: block;
 }
 
+.zerone-up-widget-container > .zerone-up-download-btn {
+    display: block;
+}
+
 .zerone-up-widget-container.empty > .zerone-up-select-image-btn {
     display: block;
 }
 
 .zerone-up-widget-container.empty > .zerone-up-remove-image-btn {
+    display: none;
+}
+
+.zerone-up-widget-container.empty > .zerone-up-download-btn,
+.zerone-up-widget-container.modified > .zerone-up-download-btn {
     display: none;
 }

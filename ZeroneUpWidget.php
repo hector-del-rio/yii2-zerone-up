@@ -22,6 +22,10 @@ class ZeroneUpWidget extends InputWidget
     // the name of remove attribute
     public $removeAttribute = null;
 
+    // download button
+    public $downloadUrl = null;
+    public $downloadButtonOptions = [];
+
     // input options
     public $inputOptions = [];
     public $inputButtonOptions = [];
@@ -73,6 +77,7 @@ class ZeroneUpWidget extends InputWidget
         Html::addCssClass($this->removeButtonOptions, 'btn btn-danger zerone-up-remove-image-btn');
         Html::addCssClass($this->inputOptions, 'zerone-up-select-image-input');
         Html::addCssClass($this->inputButtonOptions, 'btn btn-success zerone-up-select-image-btn');
+        Html::addCssClass($this->downloadButtonOptions, 'btn btn-primary zerone-up-download-btn');
 
         $this->_width = (float)filter_var($this->size, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $this->_widthUnit = substr($this->size, strlen($this->_width));
@@ -141,6 +146,16 @@ JS
         $ret .= $this->hasModel()
             ? Html::activeHiddenInput($this->model, $this->removeAttribute, $this->removeInputOptions)
             : Html::hiddenInput($this->name, $this->value, $this->removeInputOptions);
+
+        if (!empty($this->downloadUrl)) {
+
+            $ret .= Html::a(
+                '<i class="fa fa-download"></i> ' . Yii::t('app', 'Download Image'),
+                $this->downloadUrl,
+                $this->downloadButtonOptions
+            );
+
+        }
 
 
         $ret .= Html::endTag('div');

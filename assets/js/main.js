@@ -21,6 +21,8 @@
 
             reader.readAsDataURL(this.files[0]);
             inputRemoved.val('0');
+
+            container.addClass('modified');
         }
     };
 
